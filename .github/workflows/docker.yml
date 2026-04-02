@@ -3,11 +3,14 @@ name: CI/CD Docker
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     environment: app-chat
+    if: github.event_name == 'push'
 
     steps:
       - name: Checkout code
