@@ -1,0 +1,18 @@
+services:
+  server:
+    image: luongld/app-chat-server:latest
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    restart: unless-stopped
+
+  client:
+    image: luongld/app-chat-client:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    depends_on:
+      - server
