@@ -46,6 +46,7 @@ jobs:
     name: Deploy to Ubuntu Server
     needs: build-and-push # Quan trọng: Chỉ chạy khi đã push Image lên Docker Hub thành công
     runs-on: ubuntu-latest
+    environment: app-chat
     
     steps:
       - name: Checkout code
