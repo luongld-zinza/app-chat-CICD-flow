@@ -1,6 +1,6 @@
 services:
   server:
-    image: luongld/chat-server:latest
+    image: luongld123zinza/chat-server:latest
     ports:
       - "3001:3001"
     environment:
@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
 
   client:
-    image: luongld/chat-client:latest
+    image: luongld123zinza/chat-client:latest
     ports:
       - "3000:3000"
     environment:
